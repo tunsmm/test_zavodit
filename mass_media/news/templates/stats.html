@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Страница новостей{% endblock %}
+{% block header %}Все новости на сайте{% endblock %}
+{% block content %}
+
+    {% for news in all_news %}
+    {{ news }}
+    <br>
+    {% endfor %}
+
+{% endblock %}

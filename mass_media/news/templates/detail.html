@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Страница новости{% endblock %}
+{% block header %}Новость: {{ news.title }}{% endblock %}
+{% block content %}
+
+    Id новости: {{ news.id }} <br>
+    Теги новости:<br>
+    <ul>
+    {% for tag in news.tags.all %}
+        <li>
+        <a href="{% url 'news-by-tag' tag %}" class="link-info" >{{ tag }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+    Изображение к новости: <br> <br> {{ news.image_tag }} <br> <hr>
+    <a href="{% url 'all-news' %}" class="link-secondary" >Обратно ко всем новостям</a>
+
+{% endblock %}

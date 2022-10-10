@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Страница новостей{% endblock %}
+{% block header %}Все новости на сайте{% endblock %}
+{% block content %}
+
+    {% for news in all_news %}
+    {{ news }}
+    <a href="{% url 'news-detail' news.id %}" class="btn btn-outline btn-sm btn-secondary" >Читать детальнее</a>
+    <a href="{% url 'news-update' news.id %}" class="btn btn-outline btn-sm btn-warning" >Изменить новость</a>
+    <a href="{% url 'news-delete' news.id %}" class="btn btn-outline btn-sm btn-danger" >Удалить новость</a>
+    <hr>
+    {% endfor %}
+
+{% endblock %}
